@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/cjshinning/imooc-webpack-2021#readme",
   "devDependencies": {
-    "webpack": "^5.49.0",
-    "webpack-cli": "^4.7.2"
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2"
   }
 }

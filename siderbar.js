@@ -5,4 +5,5 @@ function Siderbar() {
   root.append(siderbar);
 }
 
-export default Siderbar;
+// export default Siderbar;
+module.exports = Siderbar;

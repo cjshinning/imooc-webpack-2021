@@ -86,25 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/content.js":
+/***/ "./src/avatar.jpg":
 /*!************************!*\
-  !*** ./src/content.js ***!
+  !*** ./src/avatar.jpg ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function Content() {\r\n  var root = document.getElementById('root');\r\n  var content = document.createElement('div');\r\n  content.innerHTML = 'content';\r\n  root.append(content);\r\n}\r\n\r\n// export default Content;\r\nmodule.exports = Content;\n\n//# sourceURL=webpack:///./src/content.js?");
-
-/***/ }),
-
-/***/ "./src/header.js":
-/*!***********************!*\
-  !*** ./src/header.js ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function Header() {\r\n  var root = document.getElementById('root');\r\n  var header = document.createElement('div');\r\n  header.innerHTML = 'header';\r\n  root.append(header);\r\n}\r\n\r\n// export default Header;\r\nmodule.exports = Header;\n\n//# sourceURL=webpack:///./src/header.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"f11a23bf81311782371c6e3498b2b9b7.jpg\");\n\n//# sourceURL=webpack:///./src/avatar.jpg?");
 
 /***/ }),
 
@@ -112,21 +102,11 @@ eval("function Header() {\r\n  var root = document.getElementById('root');\r\n  
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("// ES Module 模块引入方式 \r\n// CommonJS 模块引入规范\r\n// CMD\r\n// AMD\r\n\r\n// webpack 模块打包工具\r\n// js 模块打包工具 ->\r\n\r\n// import Header from './header';\r\n// import Siderbar from './siderbar';\r\n// import Content from './content';\r\n\r\nvar Header = __webpack_require__(/*! ./header */ \"./src/header.js\");\r\nvar Siderbar = __webpack_require__(/*! ./siderbar */ \"./src/siderbar.js\");\r\nvar Content = __webpack_require__(/*! ./content */ \"./src/content.js\");\r\n\r\nnew Header();\r\nnew Siderbar();\r\nnew Content();\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/siderbar.js":
-/*!*************************!*\
-  !*** ./src/siderbar.js ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function Siderbar() {\r\n  var root = document.getElementById('root');\r\n  var siderbar = document.createElement('div');\r\n  siderbar.innerHTML = 'siderbar';\r\n  root.append(siderbar);\r\n}\r\n\r\n// export default Siderbar;\r\nmodule.exports = Siderbar;\n\n//# sourceURL=webpack:///./src/siderbar.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n\r\n\r\nvar img = new Image();\r\nimg.src = _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\r\n\r\nvar root = document.getElementById('root');\r\nroot.append(img);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

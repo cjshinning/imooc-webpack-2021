@@ -8,7 +8,13 @@ module.exports = {
   module: {
     rules: [{
       test: /\.jpg$/,
-      use: 'file-loader'
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '[name]_[hash].[ext]',
+          outputPath: 'images'
+        }
+      },
     }]
   },
   output: {

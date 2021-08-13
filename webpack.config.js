@@ -20,7 +20,12 @@ module.exports = {
       test: /\.scss$/,
       use: [
         'style-loader',
-        'css-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true
+          }
+        },
         'sass-loader',
         'postcss-loader'
       ]
@@ -28,6 +33,6 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'bundle')
+    path: path.resolve(__dirname, 'dist')
   }
 }

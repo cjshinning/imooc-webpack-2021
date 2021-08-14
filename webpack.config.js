@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    main: './src/index.js'
+    main: './src/index.js',
+    sub: './src/index.js'
   },
   module: {
     rules: [{
@@ -45,7 +46,8 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    filename: 'bundle.js',
+    publicPath: 'https://cdn.example.com/assets/',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
 }

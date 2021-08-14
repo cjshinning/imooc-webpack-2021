@@ -19,8 +19,10 @@
   "homepage": "https://github.com/cjshinning/imooc-webpack-2021#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.4",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",

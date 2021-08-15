@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/cjshinning/imooc-webpack-2021#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
     "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.2.0",
@@ -34,6 +37,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "express": "^4.17.1"
   }
 }

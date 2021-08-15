@@ -3,6 +3,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
+// {
+//   // 业务代码配置
+//   // presets: [['@babel/preset-env', {
+//   //   "targets": {
+//   //     "chrome": "67"
+//   //   },
+//   //   useBuiltIns: 'usage'
+//   // }]]
+//   // 库代码配置
+//   "plugins": [["@babel/plugin-transform-runtime", {
+//     "absoluteRuntime": false,
+//     "corejs": 2,
+//     "helpers": true,
+//     "regenerator": true,
+//     "version": "7.0.0-beta.0"
+//   }]]
+// }
+
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
@@ -21,12 +39,7 @@ module.exports = {
       test: /\.m?js$/,
       exclude: /node_modules/,
       use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [['@babel/preset-env', {
-            useBuiltIns: 'usage'
-          }]]
-        }
+        loader: 'babel-loader'
       }
     }, {
       test: /\.jpg$/,

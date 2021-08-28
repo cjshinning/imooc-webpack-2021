@@ -1,5 +1,9 @@
 {
   "name": "imooc-webpack-2021",
+  "sideEffects": [
+    "@babel/polyfill",
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "learning webpack",
   "main": "index.js",
@@ -42,6 +46,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.15.3",
     "@babel/runtime-corejs2": "^7.15.3",
+    "core-js": "^2.6.12",
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

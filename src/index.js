@@ -1,13 +1,22 @@
+// 同步方式
+// import _ from 'lodash';
 
-// 第一种方式
-// import _ from 'lodash'; //1mb
+// console.log(_.join(['a', 'b', 'cd'], '***'));
 
-// 业务逻辑 1mb
-console.log(_.join(['a', 'b', 'cd'], '***'));
-// main.js 2mb
-// 打包文件会很大，加载时间长
-// 第三方库一般是不会改变的，但是业务逻辑经常变，用户重新访问我们的页面，又要加载2mb的内容
+// 异步方式
+function getComponent() {
+  return import('lodash').then(({ default: _ }) => {
+    var element = document.createElement('div');
+    element.innerHTML = _.join(['Jenny', 'Chan'], '-');
+    return element;
+  })
+}
 
-// 第二种方式
-// main.js被拆成lodash.js(1mb)，main.js(1mb)
-// 当页面业务逻辑发生变化时，只要加载main.js即可（1mb）
+getComponent().then(element => {
+  document.body.appendChild(element);
+})
+
+// 代码分割和webpack无关
+// webpack中实现代码分割，两种方式：
+// 1、同步代码分割：只需要在webpack.common.js中做optimation的配置即可
+// 2、异步代码（import）：异步代码，无需做任何配置，会自动分割

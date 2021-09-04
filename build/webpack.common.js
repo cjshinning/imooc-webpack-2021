@@ -57,9 +57,23 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   optimization: {
-    // splitChunks: {
-    //   chunks: 'all'
-    // }
+    splitChunks: {
+      chunks: 'all',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          filename: 'vendors.js'
+        },
+        default: false
+      },
+    }
   },
   output: {
     filename: '[name].js',

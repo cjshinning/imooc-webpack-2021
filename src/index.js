@@ -1,20 +1,22 @@
 // 同步方式
-// import _ from 'lodash';
+import _ from 'lodash';
 
-// console.log(_.join(['a', 'b', 'cd'], '***'));
+var element = document.createElement('div');
+element.innerHTML = _.join(['Jenny', 'Chan'], '-');
+document.body.appendChild(element);
 
 // 异步方式
-function getComponent() {
-  return import('lodash').then(({ default: _ }) => {
-    var element = document.createElement('div');
-    element.innerHTML = _.join(['Jenny', 'Chan'], '-');
-    return element;
-  })
-}
+// function getComponent() {
+//   return import(/* webpackChunkName:"lodash" */'lodash').then(({ default: _ }) => {
+//     var element = document.createElement('div');
+//     element.innerHTML = _.join(['Jenny', 'Chan'], '-');
+//     return element;
+//   })
+// }
 
-getComponent().then(element => {
-  document.body.appendChild(element);
-})
+// getComponent().then(element => {
+//   document.body.appendChild(element);
+// })
 
 // 代码分割和webpack无关
 // webpack中实现代码分割，两种方式：

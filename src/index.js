@@ -1,5 +1,11 @@
+// import test from './test.js';
+// console.log(test.name);
+
+// 注意：官网脚手架可以考虑循环每个入口文件，分别添加splitChunks，或者网上搜索多页面splitChunks配置
+
 // 同步方式
-import _ from 'lodash';
+import _ from 'lodash'; //1mb
+import $ from 'jquery';
 
 var element = document.createElement('div');
 element.innerHTML = _.join(['Jenny', 'Chan'], '-');

@@ -1,7 +1,5 @@
+import './style.css';
+import './style1.css';
 
-// 同步方式
-document.addEventListener('click', () => {
-  import(/* webpackPrefetch: true */ './click.js').then(({ default: func }) => {
-    func();
-  })
-})
+console.log('hello world');
+

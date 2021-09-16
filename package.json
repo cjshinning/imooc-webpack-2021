@@ -1,6 +1,8 @@
 {
   "name": "imooc-webpack-2021",
-  "sideEffects": false,
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "learning webpack",
   "main": "index.js",
@@ -32,7 +34,9 @@
     "css-loader": "^3.4.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.1.3",

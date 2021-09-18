@@ -1,5 +1,6 @@
-import './style.css';
-import './style1.css';
+import $ from 'jquery';
+import _ from 'lodash';
 
-console.log('hello world');
-
+const dom = $('div');
+dom.html(_.join(['Jenny', 'Chan'], '---'));
+document.appendChild(dom);

@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -35,11 +34,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin(),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      _join: ['lodash', 'join']
-    })
+    new CleanWebpackPlugin()
   ],
   optimization: {
     // 解决老的版本的库未修改hash变化问题，新版可以不加

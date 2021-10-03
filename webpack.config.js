@@ -10,6 +10,7 @@ module.exports = {
     main: './src/index.js'
   },
   devServer: {
+    overlay: true,
     contentBase: path.join(__dirname, 'dist'),
     open: true,
     port: 8080,
@@ -35,9 +36,12 @@ module.exports = {
     rules: [{
       test: /\.m?js$/,
       exclude: /node_modules/,
-      use: {
-        loader: 'babel-loader'
-      }
+      use: ['babel-loader', {
+        loader: 'eslint-loader',
+        options: {
+          fix: true
+        }
+      }]
     }, {
       test: /\.jpg$/,
       use: {

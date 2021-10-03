@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class List extends Component {
   render() {
-    return <div>List page</div>
+    return <div>List page</div>;
   }
 }
 

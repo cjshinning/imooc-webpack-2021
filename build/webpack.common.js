@@ -1,18 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
     main: './src/index.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
-    // mainFiles: ['index', 'child'],
-    alias: {
-      // jennychan: path.resolve(__dirname, '../src/child')
-      child: path.resolve(__dirname, '../src/a/b/c/child/')
-    }
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [{
@@ -43,7 +40,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, '../dll/vendors.dll.js')
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, '../dll/vendors.manifest.json')
+    })
   ],
   optimization: {
     // 解决老的版本的库未修改hash变化问题，新版可以不加
@@ -54,26 +57,13 @@ module.exports = {
     usedExports: true,
     splitChunks: {
       chunks: 'all',
-      // minSize: 30000,
-      // maxSize: 0,
-      // minChunks: 1,
-      // maxAsyncRequests: 5,
-      // maxInitialRequests: 3,
-      // automaticNameDelimiter: '~',
-      // name: true,
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           name: 'vendors'
-        },
-        // default: {
-        //   // minChunks: 2,
-        //   priority: -20,
-        //   reuseExistingChunk: true,
-        //   filename: 'common.js'
-        // }
-      },
+        }
+      }
     }
   },
   performance: false,

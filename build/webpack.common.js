@@ -6,9 +6,17 @@ module.exports = {
   entry: {
     main: './src/index.js'
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    // mainFiles: ['index', 'child'],
+    alias: {
+      // jennychan: path.resolve(__dirname, '../src/child')
+      child: path.resolve(__dirname, '../src/a/b/c/child/')
+    }
+  },
   module: {
     rules: [{
-      test: /\.m?js$/,
+      test: /\.m?jsx?$/,
       // exclude: /node_modules/,
       include: path.resolve(__dirname, '../src'),
       use: {

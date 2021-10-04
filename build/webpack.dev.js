@@ -8,7 +8,7 @@ const devConfig = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    open: true,
+    // open: true,
     port: 8080,
     hot: true
   },

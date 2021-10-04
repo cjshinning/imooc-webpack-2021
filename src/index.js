@@ -1,9 +1,16 @@
-import $ from 'jquery';
-import _ from 'lodash';
-import { ui } from './jquery.ui.js';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Child from 'child';
 
-ui();
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <div>This is App</div>
+        <Child />
+      </div>
+    )
+  }
+}
 
-const dom = $('div');
-dom.html(_.join(['Jenny', 'Chan'], '---'));
-document.appendChild(dom);
+ReactDOM.render(<App />, document.getElementById('root'));

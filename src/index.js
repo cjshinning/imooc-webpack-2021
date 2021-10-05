@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div>{_.join(['This', 'is', 'app'], ' ')}</div>
+        <div>{_.join(['This', 'is', 'App'], ' ')}</div>
       </div>
     )
   }
